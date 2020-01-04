@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>index</title>
+        <link rel="icon" href="/img/weather.png" type="image/png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container main-content">
+            {{>header}}
+            <p>Display current weather for your chosen location.</p>
+
+            <form>
+                <input class="input-field" placeholder="Location">
+                <button class="search-button">Search</button>
+            </form>
+
+            <p id="loading-message">Loading ...</p>
+
+            <div id="forecast-data">
+                <p id="location"></p>
+                <table id="forecast-table">
+                    <thead>
+                        <tr>
+                            <th><span class="bordered-bottom">Temperature</span></th>
+                            <th><span class="bordered-bottom">Probability for rain</th></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="temperature" style="text-align:center;"></td>
+                            <td id="rainfallprob" style="text-align:center;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="error-message"></p>
+
+        </div>
+        {{>footer}}
+
+        <script src="/js/app.js"></script>
+    </body>
+
+</html>
