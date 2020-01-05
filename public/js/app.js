@@ -22,7 +22,7 @@ weatherForm.addEventListener('submit', (e) => {
     forecast_data.style.display   = "none"
 
     const location = search.value
-    fetch('http://localhost:3030/weather?location=' + location).then((response) => {
+    fetch('/weather?location=' + location).then((response) => {
         response.json().then(({error, location, forecast}) => {
             if (error) {
                 loading_message.style.display = "none"
