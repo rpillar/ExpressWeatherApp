@@ -3,6 +3,9 @@ const search           = document.querySelector('input')
 const location_message = document.querySelector('p#location')
 const temperature      = document.querySelector('#temperature')
 const rainfallprob     = document.querySelector('#rainfallprob')
+const summary          = document.querySelector('#summary')
+const temperature_high = document.querySelector('#temperature-high')
+const temperature_low  = document.querySelector('#temperature-low')
 const forecast_data    = document.querySelector('#forecast-data')
 const error_message    = document.querySelector('#error-message')
 const loading_message  = document.querySelector('#loading-message')
@@ -10,6 +13,7 @@ const loading_message  = document.querySelector('#loading-message')
 location_message.textContent = ''
 temperature.textContent  = ''
 rainfallprob.textContent = ''
+summary.textContent      = ''
 forecast_data.style.display   = "none"
 error_message.style.display   = "none"
 loading_message.style.display = "none"
@@ -36,6 +40,9 @@ weatherForm.addEventListener('submit', (e) => {
                 location_message.textContent = location
                 temperature.textContent  = forecast.temperature
                 rainfallprob.textContent = ( forecast.precipProbability * 100 ).toFixed(2) + ' %'
+                summary.textContent      = forecast.summary
+                temperature_high.textContent = forecast.temperatureHigh
+                temperature_low.textContent  = forecast.temperatureLow
                 forecast_data.style.display = "block"
             }
         })

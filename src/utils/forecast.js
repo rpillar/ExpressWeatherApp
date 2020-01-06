@@ -10,9 +10,14 @@ const forecast = (latitude, longitude, callback) => {
             switch (statusCode) {
                 case 200:
                     const current = body.currently
+                    const daily = body.daily.data[0]
+
                     callback(undefined, {
                         temperature: current.temperature,
-                        precipProbability: current.precipProbability
+                        precipProbability: current.precipProbability,
+                        summary: daily.summary,
+                        temperatureHigh: daily.temperatureHigh,
+                        temperatureLow: daily.temperatureLow
                     })
                     break
                 default:

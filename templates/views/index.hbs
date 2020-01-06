@@ -19,19 +19,34 @@
 
             <p id="loading-message">Loading ...</p>
 
-            <div id="forecast-data">
+            <div id="forecast-data" style="display:none;">
                 <p id="location"></p>
+                <p><strong class="bordered-bottom">Current Details</strong></p>
                 <table id="forecast-table">
                     <thead>
                         <tr>
-                            <th><span class="bordered-bottom">Temperature</span></th>
-                            <th><span class="bordered-bottom">Probability for rain</th></span></th>
+                            <th class="bordered-bottom" style="padding-right:10px;padding-bottom:5px;border-right:2px solid lightblue;">Temperature</span></th>
+                            <th class="bordered-bottom" style="padding-left:10px;padding-bottom:5px;">Probability for rain</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td id="temperature" style="text-align:center;"></td>
-                            <td id="rainfallprob" style="text-align:center;"></td>
+                            <td id="temperature" style="text-align:center;padding-bottom:5px;border-right:2px solid lightblue;"></td>
+                            <td id="rainfallprob" style="text-align:center;padding-bottom:5px;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong class="bordered-bottom">Daily Summary</strong></p>
+                <p id="summary"></p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight:500;">High Temperature: </td>
+                            <td id="temperature-high"></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:500;">Low Temperature: </td>
+                            <td id="temperature-low"></td>
                         </tr>
                     </tbody>
                 </table>
